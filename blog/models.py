@@ -20,7 +20,6 @@ class Post(models.Model):
     exerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
 
-
     class Meta:
         ordering = ["-created_on"]
     
