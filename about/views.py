@@ -14,11 +14,7 @@ def about_me(request):
     if request.method == "POST":
         collaborate_form = CollaborateForm(data=request.POST)
         if collaborate_form.is_valid():
-            collaborate = collaborate_form.save(commit=False)
-            collaborate.name = request.POST.get('name')
-            collaborate.email = request.POST.get('email')
-            collaborate.message = request.POST.get('message')
-            collaborate.save()
+            collaborate_form.save()
             messages.add_message(
             request, messages.SUCCESS,
             'Collaboration request succesfully submitted!'
